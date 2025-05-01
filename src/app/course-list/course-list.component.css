@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+}
+
+/* Course table styling */
+table {
+    margin: 0 auto;
+    padding: 1em;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+  }
+  
+  table th {
+    text-align: left;
+    padding: 0 1em;
+  }
+  
+  table tr td {
+    padding: 1em;
+  }
+
+/* media query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+    table {
+        padding: 0.2em;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 0;
+        width: 100%;
+      }
+}
