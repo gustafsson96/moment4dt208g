@@ -4,23 +4,23 @@
     <input type="text" id="filter" [(ngModel)]="filteredValue" (input)="applyFilter()">
 </div>
 
-@if(filteredCourses.length === 0) {
-    <p>Inga kurser att visa</p>
-}
+<!-- Message if no courses are available -->
+<p *ngIf="filteredCourses.length === 0">Inga kurser att visa</p>
 
 <!-- Course Table -->
-<table id="course-table">
+<table id="course-table" *ngIf="filteredCourses.length > 0">
     <thead>
-      <tr>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Progression</th>
-      </tr>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Progression</th>
+        </tr>
     </thead>
-    <tbody *ngFor="let course of filteredCourses">
-        <td>{{ course.code }}</td>
-        <td>{{ course.coursename }}</td>
-        <td>{{ course.progression }}</td>
+    <tbody>
+        <tr *ngFor="let course of filteredCourses">
+            <td>{{ course.code }}</td>
+            <td>{{ course.coursename }}</td>
+            <td>{{ course.progression }}</td>
+        </tr>
     </tbody>
-  </table>
-
+</table>
