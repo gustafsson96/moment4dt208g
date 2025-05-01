@@ -18,7 +18,7 @@ export class CourseListComponent {
   filteredCourses: Course[] = [];
   filteredValue: string = "";
 
-  constructor(private courseService : CoursesService) {}
+  constructor(private courseService: CoursesService) { }
 
   ngOnInit() {
     this.courseService.getCourses().subscribe((data) => {
@@ -28,9 +28,11 @@ export class CourseListComponent {
   }
 
   applyFilter(): void {
-    this.filteredCourses = this.courses.filter((data) =>
-      data.coursename.toLowerCase().includes(this.filteredValue.toLowerCase())
-    )
+    const filter = this.filteredValue.toLowerCase();
+    this.filteredCourses = this.courses.filter((course) =>
+      course.coursename.toLowerCase().includes(filter) ||
+      course.code.toLowerCase().includes(filter)
+    );
   }
 
 }
