@@ -67,7 +67,7 @@ export class CourseListComponent {
     });
   }
 
-  // Comparison function
+  // Compare strings
   private compare(a: string, b: string, isAsc: boolean): number {
     return (a < b ? -1 : a > b ? 1 : 0) * (isAsc ? 1 : -1);
   }
