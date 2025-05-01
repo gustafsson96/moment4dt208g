@@ -8,12 +8,12 @@
 <p *ngIf="filteredCourses.length === 0">Inga kurser att visa</p>
 
 <!-- Course Table -->
-<table id="course-table" *ngIf="filteredCourses.length > 0">
+<table id="course-table" *ngIf="filteredCourses.length > 0" matSort (matSortChange)="sortCourses($event)">
     <thead>
         <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Progression</th>
+            <th mat-sort-header="code">Code</th>
+            <th mat-sort-header="name">Name</th>
+            <th mat-sort-header="progression">Progression</th>
         </tr>
     </thead>
     <tbody>
